@@ -21,7 +21,7 @@ function startViewer(urn) {
                             pointSize:6,
                             geomScale:0.3
                         }
-                        ext.addURN("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xNi5yY3M", options);
+                        //ext.addURN("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xNi5yY3M", options);
                         ext.addURN("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xLnJjcw", options);
                 })
 			});
