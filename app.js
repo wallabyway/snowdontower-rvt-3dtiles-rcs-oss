@@ -2,7 +2,7 @@ const AV = Autodesk.Viewing;
 const div = document.getElementById("Viewer");
 
 async function startViewer(urn) {
-	const token_URL = "https://f2iv2mhpbebrhrkfsnn2lvloxq0janqb.lambda-url.us-west-2.on.aws";
+	const token_URL = "https://hd24ouudmhx7ixzla4i6so2atm0fgsex.lambda-url.us-west-2.on.aws";
 	const _access_token = await (await fetch(token_URL)).text();
 	AV.Initializer({ 
 		env: "AutodeskProduction2", 
