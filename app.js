@@ -1,7 +1,9 @@
 const AV = Autodesk.Viewing;
 const div = document.getElementById("Viewer");
 
-function startViewer(urn) {
+async function startViewer(urn) {
+	const token_URL = "https://f2iv2mhpbebrhrkfsnn2lvloxq0janqb.lambda-url.us-west-2.on.aws";
+	const _access_token = await (await fetch(token_URL)).text();
 	AV.Initializer({ 
 		env: "AutodeskProduction2", 
 		api: "streamingV2", 
@@ -30,4 +32,4 @@ function startViewer(urn) {
 }
 
 // open empty RVT file
-startViewer("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Tbm93ZG9uJTIwVG93ZXJzJTIwU2FtcGxlJTIwRmFjYWRlcy5ydnQ");
+await startViewer("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Tbm93ZG9uJTIwVG93ZXJzJTIwU2FtcGxlJTIwRmFjYWRlcy5ydnQ");
