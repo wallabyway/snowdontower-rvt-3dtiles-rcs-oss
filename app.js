@@ -13,7 +13,9 @@ export async function startViewer(urn) {
 			const viewer = new AV.Private.GuiViewer3D(div, options);
 			viewer.start();
 			viewer.setTheme("light-theme");
-			AV.Document.load(`urn:${urn}`, async (doc) => {
+
+			const snowdon_RVT_Default_URL = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Tbm93ZG9uJTIwVG93ZXJzJTIwU2FtcGxlJTIwRmFjYWRlcy5ydnQ";
+			AV.Document.load(`urn:${snowdon_RVT_Default_URL}`, async (doc) => {
 				var viewables = doc.getRoot().getDefaultGeometry();
 				viewer.loadDocumentNode(doc, viewables).then( async (model) => {
                         await viewer.waitForLoadDone({ propDb: false, geometry: true});
@@ -24,12 +26,12 @@ export async function startViewer(urn) {
                             geomScale:0.3
                         }
                         //ext.addURN("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xNi5yY3M", options);
-                        ext.addURN("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xLnJjcw", options);
+                        ext.addURN(urn, options);
                 })
 			});
 		}
 	);
 }
 
-// open empty RVT file
-await startViewer("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Tbm93ZG9uJTIwVG93ZXJzJTIwU2FtcGxlJTIwRmFjYWRlcy5ydnQ");
+// open snowdon tower rvt, add URN of 3d-tiles
+await startViewer("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xLnJjcw");
