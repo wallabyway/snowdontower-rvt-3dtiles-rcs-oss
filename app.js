@@ -1,7 +1,7 @@
 const AV = Autodesk.Viewing;
 const div = document.getElementById("Viewer");
 
-export async function startViewer(urn) {
+async function startViewer(urn) {
 	const token_URL = "https://hd24ouudmhx7ixzla4i6so2atm0fgsex.lambda-url.us-west-2.on.aws";
 	const _access_token = await (await fetch(token_URL)).text();
 	AV.Initializer({ 
@@ -32,6 +32,8 @@ export async function startViewer(urn) {
 		}
 	);
 }
+
+window.startViewer = startViewer;
 
 // open snowdon tower rvt, add URN of 3d-tiles
 await startViewer("dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cmVjYXAtcG9pbnRjbG91ZC9Ccm93bnN2aWxsZS0xLnJjcw");
